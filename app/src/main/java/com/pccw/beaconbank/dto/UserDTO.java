@@ -14,31 +14,34 @@ import java.sql.Date;
 public class UserDTO {
 
     @JsonProperty("user_id")
-    Integer user_id;
+    private Integer user_id;
 
     @JsonProperty("first_name")
-    String first_name;
+    private String first_name;
 
     @JsonProperty("last_name")
-    String last_name;
+    private String last_name;
 
     @JsonProperty("middle_name")
-    String middle_name;
+    private String middle_name;
 
     @JsonProperty("birth_date")
-    Date birth_date;
+    private Date birth_date;
 
     @JsonProperty("address")
-    String address;
+    private String address;
 
     @JsonProperty("gender")
-    String gender;
+    private String gender;
 
     @JsonProperty("email")
-    String email;
+    private String email;
 
     @JsonProperty("password")
-    String password;
+    private String password;
+
+    @JsonProperty("account_balance")
+    private Float account_balance;
 
     public Integer getUser_id() {
         return user_id;
@@ -112,6 +115,14 @@ public class UserDTO {
         this.password = password;
     }
 
+    public Float getAccount_balance() {
+        return account_balance;
+    }
+
+    public void setAccount_balance(Float account_balance) {
+        this.account_balance = account_balance;
+    }
+
     public JSONObject getUserObject() throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("user_id", user_id);
@@ -123,6 +134,7 @@ public class UserDTO {
         jsonObject.put("gender", gender);
         jsonObject.put("email", email);
         jsonObject.put("password", password);
+        jsonObject.put("account_balance", account_balance);
 
         return jsonObject;
     }
